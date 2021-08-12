@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="homepage.css"/>
+  <link rel="stylesheet" href="addblog.css"/>
+  <script src="addblog.js"></script>  
+
+</head>
+<body style="background-color: rgba(137, 43, 226, 0.664)">
+
+<div class="header">
+  <h1>Simply Blogging</h1>
+  <p>Created by Nithya</p>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="homepage.html">Home</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.html">AboutUs</a>  
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactus.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="addblog.html">Add Blog</a>
+        </li>    
+      </ul>
+    </div>  
+  </nav>
+
+  <div class="container" style="margin-top:30px">
+
+    <div class="container">
+     
+        <label for="title">Blog Title</label>
+        <input type="text" id="title" name="title" placeholder="Title name">
+      
+        <label for="article">Article</label>
+        <input type="text" id="article" name="article" placeholder="Article description">
+
+        
+        <!-- <input type="text" id="imageurl" name="imageurl">
+        <input type="button" name="fname" value="Choose File"> -->
+        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+        <p><img id="output" width="200" /></p>
+        <script>          
+          var loadFile = function(event) {
+            var image = document.getElementById('output');
+            //alert("event target="+event.target.files[0]);
+            image.src = URL.createObjectURL(event.target.files[0]);
+          };
+          </script>
+
+
+
+        <input type="submit" value="Add Blog" onclick="addData()">
+      
+    </div>
+
+</div>
+<hr/>
+<div class="row" id="main">
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column"></div>
+</div>
+<!-- <div id="main">
+  <p><img id="outputs" width="200" /></p>
+</div>
+<div id="main2">
+  
+</div>-->
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+</body>
+
+</html>
